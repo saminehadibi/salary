@@ -9,9 +9,12 @@ namespace Adibi.Salareis
   public  class OvetimePolicies
     {
         
-        public int CalcurlatorA(int a,int b)
+        public decimal CalcurlatorA(decimal basicSalary,decimal overtime)
         {
-            return a+b;
+            //اضافه کار بر اساس 192 ساعت در ماه
+            var factor = Convert.ToDecimal(1.4);
+            return  (basicSalary / 192)* factor * overtime;
+            
         }
         public int CalcurlatorB()
         {

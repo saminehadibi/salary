@@ -27,6 +27,16 @@ namespace Adibi.Salareis
 
         public override Task<SalaryOutputDto> CreateAsync(SalaryInputDto input)
         {
+            
+            OvetimePolicies oPolicies = new OvetimePolicies();
+            var ovetimeamount = oPolicies.CalcurlatorA(input.BasicSalary, input.Overtime);
+            input.Receipt = input.BasicSalary + input.Allowance + input.Transportation+ ovetimeamount;
+            
+            //اگر حقوق بیشتر از 15 میلیون باشد مالیات 15 درصد حساب شود
+            if(input.BasicSalary>=150000000)
+            input.Tax = ((input.BasicSalary + input.Allowance) * 15) / 100;
+            input.Receipt = input.Receipt - input.Tax;
+            
             return base.CreateAsync(input);
         }
 
@@ -37,6 +47,15 @@ namespace Adibi.Salareis
 
         public override Task<SalaryOutputDto> UpdateAsync(SalaryInputDto input)
         {
+            OvetimePolicies oPolicies = new OvetimePolicies();
+            var ovetimeamount = oPolicies.CalcurlatorA(input.BasicSalary, input.Overtime);
+            input.Receipt = input.BasicSalary + input.Allowance + input.Transportation + ovetimeamount;
+
+            //اگر حقوق بیشتر از 15 میلیون باشد مالیات 15 درصد حساب شود
+            if (input.BasicSalary > 150000000)
+                input.Tax = ((input.BasicSalary + input.Allowance) * 15) / 100;
+                input.Receipt = input.Receipt - input.Tax;
+
             return base.UpdateAsync(input);
         }
      

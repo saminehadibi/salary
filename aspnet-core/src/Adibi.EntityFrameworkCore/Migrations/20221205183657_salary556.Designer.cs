@@ -4,6 +4,7 @@ using Adibi.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Adibi.Migrations
 {
     [DbContext(typeof(AdibiDbContext))]
-    partial class AdibiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221205183657_salary556")]
+    partial class salary556
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1671,9 +1673,6 @@ namespace Adibi.Migrations
 
                     b.Property<short>("Month")
                         .HasColumnType("smallint");
-
-                    b.Property<decimal>("Overtime")
-                        .HasColumnType("decimal(28,6)");
 
                     b.Property<decimal>("Receipt")
                         .HasColumnType("decimal(28,6)");
