@@ -3,6 +3,7 @@ using Abp.Application.Services.Dto;
 using Abp.Dapper.Repositories;
 using Abp.Domain.Repositories;
 using Adibi.Salareis.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Adibi.Salareis
         {
             _salaryRepository = salaryRepository;
         }
-
+      
         public override Task<SalaryOutputDto> CreateAsync(SalaryInputDto input)
         {
             
@@ -58,6 +59,6 @@ namespace Adibi.Salareis
 
             return base.UpdateAsync(input);
         }
-     
+      
     }
 }

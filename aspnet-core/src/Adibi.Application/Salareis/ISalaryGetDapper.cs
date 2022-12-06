@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Adibi.Salareis
 {
-  public  interface ISalaryGetDapper: IApplicationService, ITransientDependency
+  public  interface ISalaryGetDapper: IApplicationService
     {
         List<Salary> GetperMounth(int getyear, int getmonth);
         List<Salary> GetRange(DateTime firstDate, DateTime lastDate);

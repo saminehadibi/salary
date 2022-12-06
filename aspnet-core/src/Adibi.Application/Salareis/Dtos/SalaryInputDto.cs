@@ -28,13 +28,13 @@ namespace Adibi.Salareis.Dtos
         public void AddValidationErrors(CustomValidationContext context)
         {
 
-            if (Year < 1401 || Year > 1500) { }
-                context.Results.Add(new ValidationResult("yearoutofRange"));
+            if (Year < 1401 || Year > 1500) 
+            context.Results.Add(new ValidationResult("yearoutofRange"));
 
-            if (Month < 1 || Year > 12) { }
+            if (Month < 1 || Month > 12) 
             context.Results.Add(new ValidationResult("MonthoutofRange"));
 
-            if(BasicSalary<1)
+            if (BasicSalary < 1)
                 context.Results.Add(new ValidationResult("Please enter BasicSalary"));
 
             if (Allowance < 1)

@@ -41,6 +41,8 @@ namespace Adibi.Web.Host.Startup
         public void ConfigureServices(IServiceCollection services)
         {
             //MVC
+            //**********
+
             services.AddControllersWithViews(
                 options => { options.Filters.Add(new AbpAutoValidateAntiforgeryTokenAttribute()); }
             ).AddNewtonsoftJson(options =>
@@ -50,7 +52,7 @@ namespace Adibi.Web.Host.Startup
                     NamingStrategy = new CamelCaseNamingStrategy()
                 };
             });
-
+            services.AddControllers().AddXmlSerializerFormatters();
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
 
@@ -113,12 +115,13 @@ namespace Adibi.Web.Host.Startup
 
             // Enable middleware to serve generated Swagger as a JSON endpoint
             app.UseSwagger(c => { c.RouteTemplate = "swagger/{documentName}/swagger.json"; });
-
+           
             // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
             app.UseSwaggerUI(options =>
             {
                 // specifying the Swagger JSON endpoint.
                 options.SwaggerEndpoint($"/swagger/{_apiVersion}/swagger.json", $"Adibi API {_apiVersion}");
+                
                 options.IndexStream = () => Assembly.GetExecutingAssembly()
                     .GetManifestResourceStream("Adibi.Web.Host.wwwroot.swagger.ui.index.html");
                 options.DisplayRequestDuration(); // Controls the display of the request duration (in milliseconds) for "Try it out" requests.  
