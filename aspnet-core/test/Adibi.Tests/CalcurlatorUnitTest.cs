@@ -14,8 +14,8 @@ namespace Adibi.Tests
         public void  CalcurlatorA()
         {
             OvetimePolicies op = new OvetimePolicies();
-             var actual = op.CalcurlatorA(12 , 12);
-            Assert.Equal(expected:24, actual);
+             var actual = op.CalcurlatorA(150000000 , 10);
+            Assert.Equal(expected: 10937500, actual);
         }
     }
 }

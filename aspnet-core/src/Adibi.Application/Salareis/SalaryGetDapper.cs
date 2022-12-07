@@ -37,11 +37,29 @@ namespace Adibi.Salareis
                                                      , new { fromdate = firstDate, toDate = lastDate }).ToList<Salary>();
             return salaryList;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         [HttpPost]
-       
-        [Produces("text/xml")]
-        [Consumes("text/xml")]
-        //[Consumes("application/xml")]
+
+        //[Produces("text/xml")]
+        //[Consumes("text/xml")]
+        //[Consumes("application/json", "application/xml")]
+        [Consumes("application/xml")]
         //[Consumes("multipart/form-data")]
         //[DontWrapResult]
         //[FromForm]
@@ -51,13 +69,6 @@ namespace Adibi.Salareis
             return 1;
         }
 
-        [HttpPost]
-        [Produces("text/xml")]
-        public int Post([FromBody] MultiSalaryDto value)
-        {
-            value.FirstName = $"From Post {value.FirstName}";
-            return 1;
-        }
-
+     
     }
 }

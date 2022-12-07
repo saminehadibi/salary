@@ -41,7 +41,7 @@ namespace Adibi.Web.Host.Startup
         public void ConfigureServices(IServiceCollection services)
         {
             //MVC
-            //**********
+            
 
             services.AddControllersWithViews(
                 options => { options.Filters.Add(new AbpAutoValidateAntiforgeryTokenAttribute()); }
@@ -52,7 +52,13 @@ namespace Adibi.Web.Host.Startup
                     NamingStrategy = new CamelCaseNamingStrategy()
                 };
             });
+            ////**********
             services.AddControllers().AddXmlSerializerFormatters();
+
+            services.AddMvc()
+           .AddXmlSerializerFormatters()
+           .AddXmlDataContractSerializerFormatters();
+
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
 

@@ -25,7 +25,7 @@ namespace Adibi.Salareis
         {
             _salaryRepository = salaryRepository;
         }
-      
+        
         public override Task<SalaryOutputDto> CreateAsync(SalaryInputDto input)
         {
             
