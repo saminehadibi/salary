@@ -8,7 +8,7 @@ https://github.com/saminehadibi/salary
 # Introduction
 
 This project is create with **ASP.NET Core MVC** 
-After downloading your project, follow the steps below to run application.
+After downloading the project, follow the steps below to run application.
 
 1.Open solution in Visual Studio 2019 (v16.4)+ and build the solution.
 
