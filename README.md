@@ -21,5 +21,9 @@ After downloading the project, follow the steps below to run application.
 If you have problems with running the application, please try closing and opening Visual Studio again. It sometimes fails on first package restore.
 
 
-
+# Overview
+After run we can use it to call  All application services. For example, we can use the Salary service to get a list of Salareis.
+For example request GetAll
+'https://localhost:44311/api/services/app/Salary/GetAll' .
+Almost all operations available on the UI are also available as a Web API, since the UI uses the same Web API, and can be easily consumed.
 
