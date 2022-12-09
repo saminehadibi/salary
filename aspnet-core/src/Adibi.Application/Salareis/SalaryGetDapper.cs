@@ -39,35 +39,7 @@ namespace Adibi.Salareis
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        [HttpPost]
-
-        //[Produces("text/xml")]
-        //[Consumes("text/xml")]
-        //[Consumes("application/json", "application/xml")]
-        [Consumes("application/xml")]
-        //[Consumes("multipart/form-data")]
-        //[DontWrapResult]
-        //[FromForm]
-        public int create (MultiSalaryDto input)
-        {
-            var b = input;
-            return 1;
-        }
+       
 
      
     }
