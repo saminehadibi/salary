@@ -2,8 +2,7 @@
 
 # Important
 
-Issues of this repository are tracked on 
-https://github.com/saminehadibi/salary
+download the project from https://github.com/saminehadibi/salary
 
 # Introduction
 
@@ -21,8 +20,6 @@ After downloading the project, follow the steps below to run application.
 
 If you have problems with running the application, please try closing and opening Visual Studio again. It sometimes fails on first package restore.
 
-# Download
 
-Create & download your project from 
-https://github.com/saminehadibi/salary
+
 
