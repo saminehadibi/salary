@@ -16,7 +16,7 @@ After downloading the project, follow the steps below to run application.
 
 3.Open Package Manager Console and run the Update-Database command to create your database (ensure that the Default project is selected as .EntityFrameworkCore in the Package Manager Console window).
 
-4.Run the application.
+4.Run the application. you can run the application with IISExpress and see the run in localhost.
 
 If you have problems with running the application, please try closing and opening Visual Studio again. It sometimes fails on first package restore.
 
