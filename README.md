@@ -2,7 +2,7 @@
 
 # Important
 
-download the project from https://github.com/saminehadibi/salary
+download  the project from https://github.com/saminehadibi/salary
 
 # Introduction
 
